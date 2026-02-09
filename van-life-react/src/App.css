@@ -15,6 +15,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 110px;
     padding: 3em;
 }
 
@@ -88,6 +89,26 @@ img {
     transform: scale(1.1);
 } */
 
+.home-hero a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FF8C38;
+    border: none;
+    width: 100%;
+    margin-top: 27px;
+    padding-block: .75rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .1s ease-in-out;
+}
+
+.home-hero a:hover {
+    transform: translate(1px, 1px);
+}
+
 /* About */
 
 .about-section img {
@@ -124,6 +145,14 @@ img {
     color: #FFF;
     cursor: pointer;
     margin-top: 15px;
+}
+
+.link-button {
+    background-color: #161616;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 1em 1.5em;
 }
 
 /* Footer */
