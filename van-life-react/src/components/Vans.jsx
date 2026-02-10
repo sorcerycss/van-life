@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Vans() {
     const [vanData, setVanData] = useState([])
@@ -17,16 +18,21 @@ export default function Vans() {
 
     const vanElements = vanData.map(van => (
         <div className="van-container" key={van.id}>
-            <img className="van-img" src={van.imageUrl} alt={van.name} />
-            
-            <div className="van-info">
-                <h3>{van.name}</h3>
-                <p className="van-price">
-                    ${van.price}
-                    <span>/day</span>
-                </p>
-            </div>
-
+            <Link
+                to={`/vans/${van.id}`}
+                aria-label={`View details for ${van.name}, 
+                priced at $${van.price} per day`}
+            >
+                <img className="van-img" src={van.imageUrl} alt={van.name} />
+                
+                <div className="van-info">
+                    <h3>{van.name}</h3>
+                    <p className="van-price">
+                        ${van.price}
+                        <span>/day</span>
+                    </p>
+                </div>
+            </Link>
             <i className={`van-type ${van.type}`}>{van.type}</i>
         </div>
     ))

@@ -6,6 +6,7 @@ import About from './components/About'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Vans from './components/Vans.jsx'
+import VanDetail from './components/VanDetail.jsx'
 
 import './App.css'
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/vans" element={<Vans />} />
+        <Route path="/vans/:id" element={<VanDetail />} />
       </Routes>
       <Footer />
       </BrowserRouter>
