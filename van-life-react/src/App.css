@@ -19,6 +19,18 @@ img {
     padding: 3em;
 }
 
+.header a {
+    text-decoration: none;
+    color: #4D4D4D;
+    font-weight: 600;
+    padding: 5px 20px;
+}
+
+header a:hover {
+    color: #161616;
+    text-decoration: underline;
+}
+
 /* Navbar */
 .logo img {
     height: 40px;
@@ -26,20 +38,22 @@ img {
 
 .navbar {}
 
-.link-item {
+/* .link-item {
     text-decoration: none;
     font-weight: 600;
     color: #4D4D4D;
     margin-left: 2em;
-}
+} */
 
-.link-item:hover,
+/* .link-item:hover,
 .link-item:focus {
     color: #161616;
-}
+} */
 
-.current-page {
-    border-bottom: 2px solid #4D4D4D;
+header a.current-page {
+    font-weight: bold;
+    color: #161616;
+    text-decoration: underline;
 }
 
 /* Home */
@@ -57,12 +71,14 @@ img {
     font-size: 2.25rem;
     font-weight: 800;
     color: #FFFFFF;
+    margin-bottom: 30px;
 }
 
 .hero-text {
     font-size: 1.5rem;
     font-weight: 500;
     color: #FFFFFF;
+    margin-bottom: 60px;
 }
 
 .btn {
@@ -257,8 +273,14 @@ img {
 }
 
 /* Van Detail */
-.van-detail-container .back-button span {
+.back-btn {
+    font-size: 1rem;
+    font-weight: 500;
     text-decoration: underline;
+    align-self: flex-start;
+    border: 0;
+    background: 0;
+    cursor: pointer;
 }
 
 .van-detail {
@@ -302,6 +324,25 @@ img {
     padding: 0.75em 1.5em;
     margin: 20px 0 40px;
     cursor: pointer;
+}
+
+/* Host */
+
+.host-navbar {
+    display: flex;
+}
+
+.host-navbar a {
+    font-weight: 500;
+    color: #4D4D4D;
+    text-decoration: none;
+    padding: 5px 20px;
+}
+
+.host-navbar a:hover {
+    font-weight: 600;
+    color: #161616;
+    text-decoration: underline;
 }
 
 /* Footer */
