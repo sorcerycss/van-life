@@ -1,11 +1,7 @@
-import { useState } from 'react'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
-import Navbar from './components/Navbar'
-import Header from './components/Header.jsx'
-import Footer from './components/Footer.jsx'
 import Vans from './pages/Vans/Vans.jsx'
 import VanDetail from './pages/Vans/VanDetail.jsx'
 import Layout from './components/Layout.jsx'
