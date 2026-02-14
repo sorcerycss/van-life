@@ -399,6 +399,57 @@ header a.current-page {
     color: #4D4D4D;
 }
 
+/* Host/Vans/:ID */
+.host-van-detail-container {
+    background: #FFFFFF;
+}
+
+.host-van-details {
+    /* background: #FFFFFF; */
+    padding: 1.5em;
+    margin-top: 50px;
+}
+
+.main-details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.main-details img {
+    height: 160px;
+    border-radius: 5px;
+}
+
+.host-van-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.host-van-info h2 {
+    font-size: 1.625rem;
+    font-weight: 700;
+}
+
+.host-van-info p {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.host-vans-navbar {
+    /* background: #FFFFFF; */
+    padding: 1em;
+}
+
+.host-vans-navbar a {
+    font-weight: 500;
+    color: #4D4D4D;
+    text-decoration: none;
+    margin-right: 20px;
+    /* padding: 5px 20px; */
+}
+
 /* Footer */
 .footer {
     background: #252525;

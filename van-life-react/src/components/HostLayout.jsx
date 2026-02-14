@@ -14,7 +14,7 @@ export default function HostLayout() {
                 <NavLink
                     className=""
                     style={({isActive}) => isActive ? hostLayoutStyle : null}
-                    to="/host"
+                    to="."
                     end
                 >
                     Dashboard
@@ -22,21 +22,21 @@ export default function HostLayout() {
                 <NavLink
                     className=""
                     style={({isActive}) => isActive ? hostLayoutStyle : null}
-                    to="/host/income"
+                    to="income"
                 >
                     Income
                 </NavLink>
                  <NavLink
                     className=""
                     style={({isActive}) => isActive ? hostLayoutStyle : null}
-                    to="/host/vans"
+                    to="vans"
                 >
                     Vans
                 </NavLink>
                 <NavLink
                     style={({isActive}) => isActive ? hostLayoutStyle : null}
                     className=""
-                    to="/host/reviews"
+                    to="reviews"
                 >
                     Reviews
                 </NavLink>
