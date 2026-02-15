@@ -21,7 +21,11 @@ export default function Vans() {
 
     if (loading) return <h1>Loading...</h1>
 
-    const vanElements = vanData.map(van => (
+    const vanDisplayed = typeFilter
+        ? vanData.filter(van => van.type === typeFilter)
+        : vanData
+
+    const vanElements = vanDisplayed.map(van => (
         <div className="van-container" key={van.id}>
             <Link
                 to={`/vans/${van.id}`}
