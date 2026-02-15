@@ -31,13 +31,13 @@ export default function HostVanDetail() {
 
     return (
         <>
-            <section>
+            <section className="host-van-detail-section">
 
                 <Link
                     to=".."
                     relative="path"
                     className="back-btn"
-                >&larr; <span>Back to all vans</span></Link>
+                ><span className="arrow">&larr;</span><span>Back to all vans</span></Link>
 
             <div className="host-van-detail-container">
                 
@@ -49,7 +49,7 @@ export default function HostVanDetail() {
                             <div className="host-van-info">
                                 <i className={`van-type ${van.type}`}>{van.type}</i>
                                 <h2>{van.name}</h2>
-                                <p>${van.price}/day</p>
+                                <p>${van.price}<span>/day</span></p>
                             </div>
                         </section>
                         
