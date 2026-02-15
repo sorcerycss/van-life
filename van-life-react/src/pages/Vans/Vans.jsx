@@ -52,10 +52,10 @@ export default function Vans() {
                 <h1>Explore our van options</h1>
 
                 <div className="van-type-filter">
-                    <Link to="?type=simple" className="van-type">Simple</Link>
-                    <Link to="?type=luxury" className="van-type">Luxury</Link>
-                    <Link to="?type=rugged" className="van-type">Rugged</Link>
-                    <Link to="." className="btn-clear-filters">Clear filters</Link>
+                    <button className="van-type" onClick={() => setSearchParams({type: "simple"})}>Simple</button>
+                    <button className="van-type" onClick={() => setSearchParams({type: "luxury"})}>Luxury</button>
+                    <button className="van-type" onClick={() => setSearchParams({type: "rugged"})}>Rugged</button>
+                    <button className="btn-clear-filters" onClick={() => setSearchParams({})}>Clear filters</button>
                 </div>
 
                 <div className="van-list">
