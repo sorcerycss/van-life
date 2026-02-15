@@ -46,10 +46,39 @@ export default function Vans() {
         </div>
     ))
 
+    function genNewSearchParamString(key, value) {
+        const sp = new URLSearchParams(searchParams)
+            if (value === null) {
+                sp.delete(key)
+            } else {
+                sp.set(key, value)
+            }
+        return `?${sp.toString()}`
+  }
+
+   function handleFilterChange(key, value) {
+    setSearchParams(prevParams => {
+      if (value === null) {
+        prevParams.delete(key)
+      } else {
+        prevParams.set(key, value)
+      }
+      return prevParams
+    })
+  }
+
     return (
         <>
             <div className="van-list-container">
                 <h1>Explore our van options</h1>
+
+                {/* <Link to={genNewSearchParamString("type", "jedi")}>Jedi</Link>
+                <Link to={genNewSearchParamString("type", "sith")}>Sith</Link>
+                <Link to={genNewSearchParamString("type", null)}>Clear</Link> */}
+
+                {/* <button onClick={() => handleFilterChange("type", "jedi")}>Jedi</button>
+                <button onClick={() => handleFilterChange("type", "sith")}>Sith</button>
+                <button onClick={() => handleFilterChange("type", null)}>Clear</button> */}
 
                 <div className="van-type-filter">
                     <button className="van-type" onClick={() => setSearchParams({type: "simple"})}>Simple</button>
