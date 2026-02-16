@@ -28,7 +28,7 @@ export default function Vans() {
     const vanElements = vanDisplayed.map(van => (
         <div className="van-container" key={van.id}>
             <Link
-                to={`/vans/${van.id}`}
+                to={van.id}
                 aria-label={`View details for ${van.name}, 
                 priced at $${van.price} per day`}
             >
@@ -54,18 +54,18 @@ export default function Vans() {
                 sp.set(key, value)
             }
         return `?${sp.toString()}`
-  }
+    }
 
    function handleFilterChange(key, value) {
-    setSearchParams(prevParams => {
-      if (value === null) {
-        prevParams.delete(key)
-      } else {
-        prevParams.set(key, value)
-      }
-      return prevParams
-    })
-  }
+        setSearchParams(prevParams => {
+            if (value === null) {
+                prevParams.delete(key)
+            } else {
+                prevParams.set(key, value)
+            }
+                return prevParams
+        })
+    }
 
     return (
         <>
@@ -81,10 +81,17 @@ export default function Vans() {
                 <button onClick={() => handleFilterChange("type", null)}>Clear</button> */}
 
                 <div className="van-type-filter">
+                    {/* <button
+                        onClick={() => handleFilterChange("type", "simple")}
+                        className={`van-type simple ${typeFilter === "simple" ? "selected" : ""}`}
+                    >Simple</button> */}
                     <button className="van-type" onClick={() => setSearchParams({type: "simple"})}>Simple</button>
                     <button className="van-type" onClick={() => setSearchParams({type: "luxury"})}>Luxury</button>
                     <button className="van-type" onClick={() => setSearchParams({type: "rugged"})}>Rugged</button>
-                    <button className="btn-clear-filters" onClick={() => setSearchParams({})}>Clear filters</button>
+                    
+                    {typeFilter && (
+                        <button className="btn-clear-filters" onClick={() => setSearchParams({})}>Clear filters</button>
+                    )}
                 </div>
 
                 <div className="van-list">
