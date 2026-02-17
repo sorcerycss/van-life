@@ -29,7 +29,9 @@ export default function Vans() {
         <div className="van-container" key={van.id}>
             <Link
                 to={van.id}
-                state={{search: `?${searchParams.toString()}`}}
+                state={{search: `?${searchParams.toString()}`,
+                        type: typeFilter
+            }}
                 // Pass search params!
                 aria-label={`View details for ${van.name}, 
                 priced at $${van.price} per day`}

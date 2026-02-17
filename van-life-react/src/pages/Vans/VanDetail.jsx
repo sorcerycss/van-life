@@ -14,6 +14,12 @@ export default function VanDetail() {
 
     const search = location.state?.search || ""
 
+    const type = location.state?.type || "all"
+
+    // const typeFilter = location.state?.search 
+    // ? new URLSearchParams(location.state.search).get("type")
+    // : null
+
     // Breakdown:
     // 1. location.state?.search
     //    - If location.state exists → get .search
@@ -32,7 +38,8 @@ export default function VanDetail() {
                             to={`..${search}`}
                             relative="path"
                             className="back-btn"
-                        ><span className="arrow">&larr;</span><span>Back to all vans</span></Link>
+                        ><span className="arrow">&larr;</span><span>Back to {type} vans</span></Link>
+                        {/* {type ? `${type} vans` : "all vans"} */}
 
                         <img src={van.imageUrl} alt={van.name} />
                         <i className={`van-type ${van.type}`}>{van.type}</i>
