@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import { getVans } from '../../api'
 
 export default function Vans() {
 
@@ -9,21 +10,41 @@ export default function Vans() {
 
     const [vanData, setVanData] = useState([])
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
-        setLoading(true)
-        fetch("/api/vans")
-        .then(res => res.json())
-        .then(data => setVanData(data.vans))
-        .catch(err => console.error(err))
-        .finally(() => setLoading(false))
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getVans()
+                setVanData(data)
+            } catch (err) {
+                console.log("There was an error")
+                console.log(err)
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        loadVans()
+        // fetch("/api/vans")
+        // .then(res => res.json())
+        // .then(data => setVanData(data.vans))
+        // .catch(err => console.error(err))
+        // .finally(() => setLoading(false))
     }, [])
 
     if (loading) return <h1>Loading...</h1>
+    if (error) return <h1>Error: {error.message}</h1>
 
     const vanDisplayed = typeFilter
         ? vanData.filter(van => van.type === typeFilter)
         : vanData
+
+    console.log("About to map - vanData:", vanData)
+    console.log("vanData type:", typeof vanData)
+    console.log("vanData is array?", Array.isArray(vanData))
 
     const vanElements = vanDisplayed.map(van => (
         <div className="van-container" key={van.id}>
