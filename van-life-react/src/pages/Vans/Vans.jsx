@@ -5,7 +5,7 @@ export default function Vans() {
 
     const [searchParams, setSearchParams] = useSearchParams()
     const typeFilter = searchParams.get("type")
-    console.log(typeFilter)
+    // console.log(typeFilter)
 
     const [vanData, setVanData] = useState([])
     const [loading, setLoading] = useState(false)

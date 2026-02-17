@@ -14,6 +14,7 @@ import HostVanPricing from './pages/Host/HostVanPricing.jsx'
 import HostVanPhotos from './pages/Host/HostVanPhotos.jsx'
 import HostLayout from './components/HostLayout.jsx'
 import Reviews from './pages/Host/Reviews.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 
 import './App.css'
@@ -37,14 +38,16 @@ function App() {
                 <Route path="pricing" element={<HostVanPricing />} />
                 <Route path="photos" element={<HostVanPhotos />} />
               </Route>
-
+              
               <Route path="reviews" element={<Reviews />} />
             </Route>
 
             <Route path="about" element={<About />} />
             <Route path="vans" element={<Vans />} />
             <Route path="vans/:id" element={<VanDetail />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
+          
         </Routes>
       
       </BrowserRouter>
