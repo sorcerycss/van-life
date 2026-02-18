@@ -16,6 +16,7 @@ import HostLayout from './components/HostLayout.jsx'
 import Reviews from './pages/Host/Reviews.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Login from './pages/Login.jsx'
+import AuthRequired from './components/AuthRequired.jsx'
 
 
 import './App.css'
@@ -28,6 +29,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+
+          <Route element={<AuthRequired />}> 
 
             <Route path="host" element={<HostLayout />}>
               <Route index element={<Dashboard />} />
@@ -42,6 +45,8 @@ function App() {
               
               <Route path="reviews" element={<Reviews />} />
             </Route>
+
+          </Route> 
 
             <Route path="about" element={<About />} />
             <Route path="vans" element={<Vans />} />
