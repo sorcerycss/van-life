@@ -2,6 +2,11 @@ import { NavLink, Link } from "react-router-dom"
 import iconAvatar from "/public/avatar-icon.svg"
 
 export default function Header() {
+
+    function fakeLogOut() {
+        localStorage.removeItem("loggedin")
+    }
+    
     return (
         <header className="header">
             <Link className="logo" to="/">
@@ -32,6 +37,7 @@ export default function Header() {
                         src={iconAvatar}
                         alt="Avatar" />
                 </Link>
+                <button onClick={fakeLogOut}>X</button>
              </nav>
         </header>
     )

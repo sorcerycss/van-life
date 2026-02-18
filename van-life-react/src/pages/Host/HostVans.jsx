@@ -1,22 +1,26 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import { getHostVans } from "../../api"
 
 export default function HostVans() {
 
     const [vans, setVans] = useState([])
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
-        setLoading(true)
-        fetch("/api/host/vans")
-        .then(res => res.json())
-        .then(data => {
-            console.log("Full data:", data)
-            console.log("data.vans:", data.vans)
-            setVans(data.vans)
-    })
-        .catch(err => console.error(err))
-        .finally(() => setLoading(false))
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getHostVans()
+                setVans(data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+        loadVans()
     }, [])
 
     console.log("Vans state:", vans)
@@ -38,6 +42,14 @@ export default function HostVans() {
             </div>
         </Link>
     ))
+
+    if (loading) {
+        return <h1>Loading...</h1>
+    }
+
+    if (error) {
+        return <h1>There was an error: {error.message}</h1>
+    }
 
     return (
         <>
