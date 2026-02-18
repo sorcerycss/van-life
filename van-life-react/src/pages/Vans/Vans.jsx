@@ -35,8 +35,8 @@ export default function Vans() {
         // .finally(() => setLoading(false))
     }, [])
 
-    if (loading) return <h1>Loading...</h1>
-    if (error) return <h1>Error: {error.message}</h1>
+    if (loading) return <h1 aria-live="polite">Loading...</h1>
+    if (error) return <h1 aria-live="assertive">Error: {error.message}</h1>
 
     const vanDisplayed = typeFilter
         ? vanData.filter(van => van.type === typeFilter)
