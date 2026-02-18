@@ -28,7 +28,7 @@ export default function Header() {
                 <Link to="login" className="login-link">
                     <img 
                         className="login-icon"
-                        src="avatar-icon.svg"
+                        src="/public/avatar-icon.svg"
                         alt="Avatar" />
                 </Link>
              </nav>
