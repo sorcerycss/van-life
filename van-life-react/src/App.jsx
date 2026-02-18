@@ -15,6 +15,7 @@ import HostVanPhotos from './pages/Host/HostVanPhotos.jsx'
 import HostLayout from './components/HostLayout.jsx'
 import Reviews from './pages/Host/Reviews.jsx'
 import NotFound from './pages/NotFound.jsx'
+import Login from './pages/Login.jsx'
 
 
 import './App.css'
@@ -45,6 +46,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="vans" element={<Vans />} />
             <Route path="vans/:id" element={<VanDetail />} />
+            <Route path="login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
           </Route>
           
