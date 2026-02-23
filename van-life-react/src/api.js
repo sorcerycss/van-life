@@ -17,6 +17,8 @@ const firebaseConfig = {
   appId: "1:826505796278:web:21e9b4bf5120656d3f6417"
 };
 
+// "vanlife-d0a84"
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
@@ -36,12 +38,20 @@ const vansCollectionRef = collection(db, "vans")
 
 // ========================
 export async function getVans() {
-    const snapshot = await getDocs(vansCollectionRef) // Get ALL docs
-    const vans = snapshot.docs.map(doc => ({ // Loop through each doc
+    try {
+        const snapshot = await getDocs(vansCollectionRef) // Get ALL docs
+        const vans = snapshot.docs.map(doc => ({ // Loop through each doc
         ...doc.data(), // Spread the van data (name, price, etc.)
         id: doc.id // Add the document ID
-    }))
-    return vans
+        }))
+        return vans
+    } catch (error) {
+        throw {
+            message: "Failed to fetch vans",
+            statusText: error.message,
+            status: error.code || 500
+        }
+    }
 }
 
 export async function getVan(id) {

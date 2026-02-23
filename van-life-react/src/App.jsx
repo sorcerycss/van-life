@@ -24,6 +24,7 @@ import Reviews from './pages/Host/Reviews.jsx'
 import NotFound from './pages/NotFound.jsx'
 import Login from './pages/Login.jsx'
 import AuthRequired from './components/AuthRequired.jsx'
+import Error from './components/Error.jsx'
 
 
 import './App.css'
@@ -51,7 +52,12 @@ const routes = (
           </Route> 
 
             <Route path="about" element={<About />} />
-            <Route path="vans" element={<Vans />} loader={vansLoader} />
+            <Route
+              path="vans"
+              element={<Vans />}
+              loader={vansLoader}
+              errorElement={<Error />}
+              />
             <Route path="vans/:id" element={<VanDetail />} />
             <Route path="login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
