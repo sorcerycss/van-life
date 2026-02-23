@@ -9,7 +9,7 @@ import {
 
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
-import Vans from './pages/Vans/Vans.jsx'
+import Vans, { loader as vansLoader } from './pages/Vans/Vans.jsx'
 import VanDetail from './pages/Vans/VanDetail.jsx'
 import Layout from './components/Layout.jsx'
 import Dashboard from './pages/Host/Dashboard.jsx'
@@ -51,7 +51,7 @@ const routes = (
           </Route> 
 
             <Route path="about" element={<About />} />
-            <Route path="vans" element={<Vans />} />
+            <Route path="vans" element={<Vans />} loader={vansLoader} />
             <Route path="vans/:id" element={<VanDetail />} />
             <Route path="login" element={<Login />} />
             <Route path="*" element={<NotFound />} />

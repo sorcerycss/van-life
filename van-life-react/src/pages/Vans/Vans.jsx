@@ -1,50 +1,58 @@
 import { useEffect, useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams, useLoaderData } from 'react-router-dom'
 import { getVans } from '../../api'
+
+export async function loader() {
+    const vans = await getVans()
+    return { vans }
+}
 
 export default function Vans() {
 
+    const { vans } = useLoaderData()
+
     const [searchParams, setSearchParams] = useSearchParams()
     const typeFilter = searchParams.get("type")
+    
     // console.log(typeFilter)
 
-    const [vanData, setVanData] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
+    // const [vanData, setVanData] = useState([])
+    // const [loading, setLoading] = useState(false)
+    // const [error, setError] = useState(null)
 
-    useEffect(() => {
-        async function loadVans() {
-            setLoading(true)
-            try {
-                const data = await getVans()
-                setVanData(data)
-            } catch (err) {
-                console.log("There was an error")
-                console.log(err)
-                setError(err)
-            } finally {
-                setLoading(false)
-            }
-        }
+    // useEffect(() => {
+    //     async function loadVans() {
+    //         setLoading(true)
+    //         try {
+    //             const data = await getVans()
+    //             setVanData(data)
+    //         } catch (err) {
+    //             console.log("There was an error")
+    //             console.log(err)
+    //             setError(err)
+    //         } finally {
+    //             setLoading(false)
+    //         }
+    //     }
 
-        loadVans()
-        // fetch("/api/vans")
-        // .then(res => res.json())
-        // .then(data => setVanData(data.vans))
-        // .catch(err => console.error(err))
-        // .finally(() => setLoading(false))
-    }, [])
+    //     loadVans()
+    //     // fetch("/api/vans")
+    //     // .then(res => res.json())
+    //     // .then(data => setVanData(data.vans))
+    //     // .catch(err => console.error(err))
+    //     // .finally(() => setLoading(false))
+    // }, [])
 
-    if (loading) return <h1 aria-live="polite">Loading...</h1>
-    if (error) return <h1 aria-live="assertive">Error: {error.message}</h1>
+    // if (loading) return <h1 aria-live="polite">Loading...</h1>
+    // if (error) return <h1 aria-live="assertive">Error: {error.message}</h1>
 
     const vanDisplayed = typeFilter
-        ? vanData.filter(van => van.type === typeFilter)
-        : vanData
+        ? vans.filter(van => van.type === typeFilter)
+        : vans
 
-    console.log("About to map - vanData:", vanData)
-    console.log("vanData type:", typeof vanData)
-    console.log("vanData is array?", Array.isArray(vanData))
+    // console.log("About to map - vanData:", vanData)
+    // console.log("vanData type:", typeof vanData)
+    // console.log("vanData is array?", Array.isArray(vanData))
 
     const vanElements = vanDisplayed.map(van => (
         <div className="van-container" key={van.id}>
