@@ -4,6 +4,10 @@ export default function HostVanInfo() {
 
     const { van } = useOutletContext()
 
+    if (!van) {
+        return <h2>Loading...</h2>
+    }
+
     return (
         <>
             <section className="host-van-info">

@@ -1,23 +1,31 @@
 import { useEffect, useState } from "react"
 import { Link, NavLink, Outlet, useParams } from "react-router-dom"
-import { getHostVans } from "../../api"
+import { getVan } from "../../api"
 
 export default function HostVanDetail() {
 
     const { id } = useParams()
-    const [van, setVan] = useState([])
+    const [van, setVan] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
     console.log("Current van state:", van)
 
     useEffect(() => {
+        console.log("🔵 useEffect running, ID:", id)
+
          async function loadVans() {
+            console.log("🟡 loadVans function called")
             setLoading(true)
             try {
-                const data = await getHostVans(id)
-                setVan(data[0])
+                console.log("🟢 About to call getVan with ID:", id)
+
+                const data = await getVan(id)
+
+                console.log("✅ getVan returned data:", data)
+                setVan(data)
             } catch (err) {
+                console.error("🔴 Error caught:", err)
                 setError(err)
             } finally {
                 setLoading(false)

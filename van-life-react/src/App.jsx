@@ -1,4 +1,11 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { 
+  BrowserRouter,
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Routes,
+  Route
+} from 'react-router-dom'
 
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
@@ -21,13 +28,8 @@ import AuthRequired from './components/AuthRequired.jsx'
 
 import './App.css'
 
-function App() {
-  return (
-    <>
-      <BrowserRouter>
-      
-        <Routes>
-          <Route path="/" element={<Layout />}>
+const routes = (
+  <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
 
           <Route element={<AuthRequired />}> 
@@ -53,11 +55,15 @@ function App() {
             <Route path="vans/:id" element={<VanDetail />} />
             <Route path="login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
-          </Route>
-          
-        </Routes>
-      
-      </BrowserRouter>
+    </Route>
+)
+
+const router = createBrowserRouter(createRoutesFromElements(routes))
+
+function App() {
+  return (
+    <>
+      <RouterProvider router={router} />
     </>
   )
 }
