@@ -361,6 +361,69 @@ header a.current-page {
     text-decoration: underline;
 }
 
+/* Dashboard */
+.host-dashboard-earnings {
+    background-color: #ffead0;
+    padding: 37px 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.host-dashboard-earnings>.info>h1 {
+    font-size: 36px;
+    color: #161616;
+    margin: 0;
+}
+
+.host-dashboard-earnings>.info>p {
+    color: #4d4d4d;
+}
+
+.host-dashboard-earnings>.info>p>span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.host-dashboard-earnings>.info>h2 {
+    margin: 0;
+    font-size: 38px;
+    color: #161616;
+    font-weight: 900;
+}
+
+.host-vans-list {
+    padding-inline: 26px;
+}
+
+.host-van-single {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 15px;
+    padding: 18px 24px;
+}
+
+.host-van-single>img {
+    height: 70px;
+    border-radius: 5px;
+    margin-right: 17px;
+}
+
+.host-dashboard-vans {
+    padding: 38px 26px;
+}
+
+.host-dashboard-vans>.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.host-dashboard-vans .host-vans-list {
+    padding-inline: 0;
+}
+
 
 /* Host/Vans */
 .host-van-list {

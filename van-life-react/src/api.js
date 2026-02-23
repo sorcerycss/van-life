@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-import { getFirestore } from "firebase/firestore/lite"
+import { getFirestore, collection, getDocs } from "firebase/firestore/lite"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -19,7 +19,27 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
+
+// import { collection, getDocs } from "firebase/firestore";
+
+// const querySnapshot = await getDocs(collection(db, "cities"));
+// querySnapshot.forEach((doc) => {
+//   // doc.data() is never undefined for query doc snapshots
+//   console.log(doc.id, " => ", doc.data());
+// });
+
+const vansCollectionRef = collection(db, "vans")
+
 // Refactoring the fetching functions below
+
+// export async function getVans() {
+//     const snapshot = await getDocs(vansCollectionRef)
+//     const vans = snapshot.docs.map(doc => ({
+//         ...doc.data(),
+//         id: doc.id
+//     }))
+//     return vans
+// }
 
 // export async function getVans() {
 //     const res = await fetch("/api/vans")
