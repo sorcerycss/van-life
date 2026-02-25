@@ -4,7 +4,8 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Routes,
-  Route
+  Route,
+  redirect
 } from 'react-router-dom'
 
 import Home from './pages/Home.jsx'
@@ -12,10 +13,10 @@ import About from './pages/About.jsx'
 import Vans, { loader as vansLoader } from './pages/Vans/Vans.jsx'
 import VanDetail from './pages/Vans/VanDetail.jsx'
 import Layout from './components/Layout.jsx'
-import Dashboard from './pages/Host/Dashboard.jsx'
+import Dashboard, { loader as dashboardLoader } from './pages/Host/Dashboard.jsx'
 import Income from './pages/Host/Income.jsx'
-import HostVans from './pages/Host/HostVans.jsx'
-import HostVanDetail from './pages/Host/HostVanDetail.jsx'
+import HostVans, { loader as hostVansLoader } from './pages/Host/HostVans.jsx'
+import HostVanDetail, { loader as hostVanDetailLoader } from './pages/Host/HostVanDetail.jsx'
 import HostVanInfo from './pages/Host/HostVanInfo.jsx'
 import HostVanPricing from './pages/Host/HostVanPricing.jsx'
 import HostVanPhotos from './pages/Host/HostVanPhotos.jsx'
@@ -36,11 +37,24 @@ const routes = (
           <Route element={<AuthRequired />}> 
 
             <Route path="host" element={<HostLayout />}>
-              <Route index element={<Dashboard />} />
+              <Route
+                index
+                element={<Dashboard />}
+                loader={dashboardLoader}
+                errorElement={<Error />}
+                />
               <Route path="income" element={<Income />} />
-              <Route path="vans" element={<HostVans />} />
+              <Route
+                path="vans"
+                element={<HostVans />}
+                loader={hostVansLoader}
+                />
 
-              <Route path="vans/:id" element={<HostVanDetail />}>
+              <Route
+                path="vans/:id"
+                element={<HostVanDetail />}
+                loader={hostVanDetailLoader}
+                >
                 <Route index element={<HostVanInfo />} />
                 <Route path="pricing" element={<HostVanPricing />} />
                 <Route path="photos" element={<HostVanPhotos />} />
@@ -58,7 +72,10 @@ const routes = (
               loader={vansLoader}
               errorElement={<Error />}
               />
-            <Route path="vans/:id" element={<VanDetail />} />
+            <Route
+            path="vans/:id"
+            element={<VanDetail />}
+            />
             <Route path="login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
     </Route>

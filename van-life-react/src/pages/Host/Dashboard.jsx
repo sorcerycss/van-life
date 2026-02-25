@@ -1,21 +1,28 @@
-import { useState,useEffect } from "react"
-import { Link } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { Link, useLoaderData } from "react-router-dom"
 import { getHostVans } from "../../api"
 import { BsStarFill } from "react-icons/bs"
 
+export async function loader() {
+    const vans = await getHostVans()
+    return { vans }
+}
+
 export default function Dashboard() {
 
-    const [vans, setVans] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
+    const { vans } = useLoaderData()
 
-    useEffect(() => {
-        setLoading(true)
-        getHostVans()
-        .then(data => setVans(data))
-        .catch(err => setError(err))
-        .finally(() => setLoading(false))
-    }, [])
+    // const [vans, setVans] = useState([])
+    // const [loading, setLoading] = useState(false)
+    // const [error, setError] = useState(null)
+
+    // useEffect(() => {
+    //     setLoading(true)
+    //     getHostVans()
+    //     .then(data => setVans(data))
+    //     .catch(err => setError(err))
+    //     .finally(() => setLoading(false))
+    // }, [])
 
     function renderVanElements(vans) {
         const hostVansEls = vans.map((van) => (
@@ -36,13 +43,13 @@ export default function Dashboard() {
         )
     }
 
-    if (loading) {
-        return <h1>Loading...</h1>
-    }
+    // if (loading) {
+    //     return <h1>Loading...</h1>
+    // }
 
-    if (error) {
-        return <h1>Error: {error.message}</h1>
-    }
+    // if (error) {
+    //     return <h1>Error: {error.message}</h1>
+    // }
 
     return (
         <>

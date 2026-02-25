@@ -1,31 +1,38 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 import { getHostVans } from "../../api"
+
+export async function loader() {
+    const vans = await getHostVans()
+    return { vans }
+} 
 
 export default function HostVans() {
 
-    const [vans, setVans] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
+    const { vans } = useLoaderData()
 
-    useEffect(() => {
-        async function loadVans() {
-            setLoading(true)
-            try {
-                const data = await getHostVans()
-                setVans(data)
-            } catch (err) {
-                setError(err)
-            } finally {
-                setLoading(false)
-            }
-        }
-        loadVans()
-    }, [])
+    // const [vans, setVans] = useState([])
+    // const [loading, setLoading] = useState(false)
+    // const [error, setError] = useState(null)
 
-    console.log("Vans state:", vans)
+    // useEffect(() => {
+    //     async function loadVans() {
+    //         setLoading(true)
+    //         try {
+    //             const data = await getHostVans()
+    //             setVans(data)
+    //         } catch (err) {
+    //             setError(err)
+    //         } finally {
+    //             setLoading(false)
+    //         }
+    //     }
+    //     loadVans()
+    // }, [])
 
-    if (loading) return <h1>Loading...</h1>
+    // console.log("Vans state:", vans)
+
+    // if (loading) return <h1>Loading...</h1>
 
     const hostVanElements = vans.map(van => (
         <Link
@@ -43,13 +50,13 @@ export default function HostVans() {
         </Link>
     ))
 
-    if (loading) {
-        return <h1>Loading...</h1>
-    }
+    // if (loading) {
+    //     return <h1>Loading...</h1>
+    // }
 
-    if (error) {
-        return <h1>There was an error: {error.message}</h1>
-    }
+    // if (error) {
+    //     return <h1>There was an error: {error.message}</h1>
+    // }
 
     return (
         <>
