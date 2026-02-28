@@ -1,10 +1,11 @@
-import { NavLink, Link } from "react-router-dom"
+import { NavLink, Link, Navigate } from "react-router-dom"
 import iconAvatar from "/public/avatar-icon.svg"
 
 export default function Header() {
 
     function fakeLogOut() {
         localStorage.removeItem("loggedin")
+        // navigate("/login", { replace: true })
     }
     
     return (

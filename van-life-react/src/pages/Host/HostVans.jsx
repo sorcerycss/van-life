@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react"
+// import { useState, useEffect } from "react"
 import { Link, useLoaderData } from "react-router-dom"
 import { getHostVans } from "../../api"
+import { requireAuth } from "../../utils"
 
-export async function loader() {
+export async function loader({ request }) {
+    await requireAuth(request)
     const vans = await getHostVans()
     return { vans }
 } 
@@ -63,7 +65,8 @@ export default function HostVans() {
             <div className="host-van-list-container">
                     <div className="host-van-list">
                         <h1>Your listed vans</h1>
-                        {vans.length > 0 ? hostVanElements : <p>No vans listed yet</p>}
+                        {/* {vans.length > 0 ? hostVanElements : <p>No vans listed yet</p>} */}
+                        {hostVanElements}
                     </div>
             </div>
         </>

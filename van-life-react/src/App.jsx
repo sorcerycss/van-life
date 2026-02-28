@@ -11,7 +11,7 @@ import {
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Vans, { loader as vansLoader } from './pages/Vans/Vans.jsx'
-import VanDetail from './pages/Vans/VanDetail.jsx'
+import VanDetail, { loader as vanDetailLoader} from './pages/Vans/VanDetail.jsx'
 import Layout from './components/Layout.jsx'
 import Dashboard, { loader as dashboardLoader } from './pages/Host/Dashboard.jsx'
 import Income from './pages/Host/Income.jsx'
@@ -23,27 +23,35 @@ import HostVanPhotos from './pages/Host/HostVanPhotos.jsx'
 import HostLayout from './components/HostLayout.jsx'
 import Reviews from './pages/Host/Reviews.jsx'
 import NotFound from './pages/NotFound.jsx'
-import Login from './pages/Login.jsx'
+import Login, { loader as loginLoader } from './pages/Login.jsx'
 import AuthRequired from './components/AuthRequired.jsx'
 import Error from './components/Error.jsx'
 
 
 import './App.css'
+import { requireAuth } from './utils.js'
 
 const routes = (
   <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
+          <Route index element={<Home />} />
 
           <Route element={<AuthRequired />}> 
 
-            <Route path="host" element={<HostLayout />}>
+            <Route
+              path="host"
+              element={<HostLayout />}
+              errorElement={<Error />}
+              >
               <Route
                 index
                 element={<Dashboard />}
                 loader={dashboardLoader}
-                errorElement={<Error />}
                 />
-              <Route path="income" element={<Income />} />
+              <Route
+                path="income"
+                element={<Income />}
+                // loader={async () => await requireAuth()}
+                />
               <Route
                 path="vans"
                 element={<HostVans />}
@@ -55,12 +63,28 @@ const routes = (
                 element={<HostVanDetail />}
                 loader={hostVanDetailLoader}
                 >
-                <Route index element={<HostVanInfo />} />
-                <Route path="pricing" element={<HostVanPricing />} />
-                <Route path="photos" element={<HostVanPhotos />} />
+                <Route
+                  index
+                  element={<HostVanInfo />} 
+                  // loader={() => requireAuth()}
+                  />
+                <Route
+                  path="pricing"
+                  element={<HostVanPricing />}
+                  // loader={() => requireAuth()}
+                  />
+                <Route
+                  path="photos"
+                  element={<HostVanPhotos />}
+                  // loader={() => requireAuth()}
+                  />
               </Route>
               
-              <Route path="reviews" element={<Reviews />} />
+              <Route
+                path="reviews"
+                element={<Reviews />}
+                // loader={() => requireAuth()}
+                />
             </Route>
 
           </Route> 
@@ -75,8 +99,14 @@ const routes = (
             <Route
             path="vans/:id"
             element={<VanDetail />}
+            loader={vanDetailLoader}
             />
-            <Route path="login" element={<Login />} />
+            <Route
+              path="login"
+              element={<Login />}
+              loader={loginLoader}
+              errorElement={<Error />}
+              />
             <Route path="*" element={<NotFound />} />
     </Route>
 )
