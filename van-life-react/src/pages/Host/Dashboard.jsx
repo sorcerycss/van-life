@@ -1,7 +1,7 @@
 // import { useState, useEffect } from "react"
 import { Link, useLoaderData } from "react-router-dom"
-import { getHostVans } from "../../api"
-import { requireAuth } from "../../utils"
+import { getHostVans } from "../../api/api"
+import { requireAuth } from "../../utils/utils"
 import { BsStarFill } from "react-icons/bs"
 
 export async function loader({ request }) {

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate, useLocation, useSearchParams, useLoaderData } from "react-router-dom"
-import { loginUser } from "../api"
+import { loginUser } from "../api/api"
 
 export function loader({ request }) {
     const message = new URL(request.url).searchParams.get("message")

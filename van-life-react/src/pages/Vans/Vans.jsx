@@ -1,6 +1,6 @@
 // import { useEffect, useState } from 'react'
 import { Link, useSearchParams, useLoaderData } from 'react-router-dom'
-import { getVans } from '../../api'
+import { getVans } from '../../api/api'
 
 export async function loader() {
     const vans = await getVans()
