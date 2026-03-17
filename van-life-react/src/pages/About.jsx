@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
+import aboutHero from "../assets/about-hero.png"
 
 export default function About() {
   return (
     <div className="container">
       <section className="about-section">
-        <img className="about-hero" src="/about-hero.png" alt="" />
+        <img className="about-hero" src={aboutHero} alt="" />
         <h1>Don’t squeeze in a sedan when you could relax in a van.</h1>
         <p>
           Our mission is to enliven your road trip with the perfect travel

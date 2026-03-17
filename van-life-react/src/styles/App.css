@@ -74,7 +74,7 @@ header a.current-page {
 /* Home */
 .home-hero {
     background-color: #FFF7ED;
-    background-image: url(/home-hero.png);
+    background-image: url(../assets/home-hero.png);
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
