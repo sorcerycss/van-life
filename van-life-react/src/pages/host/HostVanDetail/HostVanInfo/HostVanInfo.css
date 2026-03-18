@@ -1,0 +1,15 @@
+.host-van-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.host-van-info h2 {
+    font-size: 1.625rem;
+    font-weight: 700;
+}
+
+.host-van-info p {
+    font-size: 20px;
+    font-weight: 600;
+}

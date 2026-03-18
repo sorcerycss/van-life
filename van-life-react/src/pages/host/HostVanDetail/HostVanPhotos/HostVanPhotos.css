@@ -1,0 +1,8 @@
+.host-van-photos-info {
+    padding: 1em;
+}
+
+.host-van-photos-info img {
+    height: 100px;
+    border-radius: 5px;
+}

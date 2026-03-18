@@ -1,12 +1,31 @@
+/* reset */
+
 *,
 ::before,
 ::after {
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Inter', sans-serif;
     background: #FFF7ED;
+}
+
+img {
+    display: block;
+}
+
+/* general styling */
+
+.container {
+    max-width: 548px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    width: 100%;
+    border-radius: 5px;
 }

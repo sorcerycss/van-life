@@ -1,17 +1,19 @@
-/* Image */
-img {
-    display: block;
-}
+/* image */
 
-/* Container */
-.container {
+/* img {
+    display: block;
+} */
+
+/* container */
+
+/* .container {
     max-width: 548px;
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
 /* Header */
-.header {
+/* .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,11 +27,11 @@ img {
     font-weight: 600;
     padding: 5px 20px;
     /* display: inline-flex; */
-    /* align-items: center; */
-    /* border: 1px solid red; */
-}
+/* align-items: center; */
+/* border: 1px solid red; */
+/* } */
 
-header a:hover {
+/* header a:hover {
     color: #161616;
     text-decoration: underline;
 }
@@ -42,16 +44,17 @@ header .login-link {
 header .login-icon {
     height: 18px;
     width: 18px;
-}
+} */
 
+/* */
 /* Navbar */
-.logo img {
+/* .logo img {
     height: 40px;
 }
 
 .navbar {
     display: flex;
-}
+} */
 
 /* .link-item {
     text-decoration: none;
@@ -65,14 +68,14 @@ header .login-icon {
     color: #161616;
 } */
 
-header a.current-page {
+/* header a.current-page {
     font-weight: bold;
     color: #161616;
     text-decoration: underline;
-}
+} */
 
 /* Home */
-.home-hero {
+/* .home-hero {
     background-color: #FFF7ED;
     background-image: url(../assets/home-hero.png);
     background-blend-mode: multiply;
@@ -94,14 +97,14 @@ header a.current-page {
     font-weight: 500;
     color: #FFFFFF;
     margin-bottom: 60px;
-}
+} */
 
-.btn {
+/* .btn {
     width: 100%;
     border-radius: 5px;
-}
+} */
 
-.btn-home {
+/* .btn-home {
     display: inline-block;
     padding: 1em 1.5em;
     font-size: 1rem;
@@ -111,16 +114,14 @@ header a.current-page {
     cursor: pointer;
     background: #FF8C38;
     color: #FFFFFF;
-    /* transform: scale(1);
-    transition: transform 250ms; */
-}
+} */
 
 /* .btn-home:hover,
 .btn-home:focus {
     transform: scale(1.1);
 } */
 
-.home-hero a {
+/* .home-hero a {
     display: inline-block;
     text-align: center;
     text-decoration: none;
@@ -138,11 +139,11 @@ header a.current-page {
 
 .home-hero a:hover {
     transform: translate(1px, 1px);
-}
+} */
 
 /* About */
 
-.about-section img {
+/* .about-section img {
     width: 548px;
 }
 
@@ -184,10 +185,11 @@ header a.current-page {
     border-radius: 10px;
     text-decoration: none;
     padding: 1em 1.5em;
-}
+} */
 
 /* Vans */
-.van-container {
+
+/* .van-container {
     display: flex;
     flex-direction: column;
 }
@@ -286,10 +288,11 @@ header a.current-page {
 
 .van-type.rugged {
     background: #115E59;
-}
+} */
 
 /* Van Detail */
-.back-btn {
+
+/* .back-btn {
     font-size: 1rem;
     font-weight: 500;
     text-decoration: underline;
@@ -340,11 +343,11 @@ header a.current-page {
     padding: 0.75em 1.5em;
     margin: 20px 0 40px;
     cursor: pointer;
-}
+} */
 
 /* Host */
 
-.host-navbar {
+/* .host-navbar {
     display: flex;
 }
 
@@ -359,10 +362,11 @@ header a.current-page {
     font-weight: 600;
     color: #161616;
     text-decoration: underline;
-}
+} */
 
 /* Dashboard */
-.host-dashboard-earnings {
+
+/* .host-dashboard-earnings {
     background-color: #ffead0;
     padding: 37px 26px;
     display: flex;
@@ -422,11 +426,12 @@ header a.current-page {
 
 .host-dashboard-vans .host-vans-list {
     padding-inline: 0;
-}
+} */
 
 
 /* Host/Vans */
-.host-van-list {
+
+/* .host-van-list {
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -478,11 +483,11 @@ header a.current-page {
 .host-name-info p {
     font-weight: 500;
     color: #4D4D4D;
-}
+} */
 
 /* Host/Vans/:ID */
 
-.host-van-detail-section {
+/* .host-van-detail-section {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 1em;
@@ -591,10 +596,11 @@ a.back-btn .arrow {
 .host-van-photos-info img {
     height: 100px;
     border-radius: 5px;
-}
+} */
 
 /* NotFound */
-.not-found-container {
+
+/* .not-found-container {
     width: 80%;
     margin: 0 auto;
     display: flex;
@@ -617,14 +623,14 @@ a.back-btn .arrow {
     margin-top: 20px;
     font-size: 18px;
     font-weight: 700;
-}
+} */
 
 /* Login */
-.login-container {
+
+/* .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding-inline: 27px; */
 }
 
 .login-container h1 {
@@ -682,13 +688,4 @@ a.back-btn .arrow {
 .login-container p span {
     color: #FF8C38;
     font-weight: 700;
-}
-
-
-/* Footer */
-.footer {
-    background: #252525;
-    text-align: center;
-    color: #AAAAAA;
-    padding: 26px 106px;
-}
+} */
