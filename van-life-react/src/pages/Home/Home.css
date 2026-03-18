@@ -1,0 +1,67 @@
+/* container */
+/* .container {
+    max-width: 548px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+/* home */
+.home-hero {
+    background-color: #FFF7ED;
+    background-image: url(../../assets/home-hero.png);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh;
+    padding: 5em 1em;
+}
+
+.hero-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.hero-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-bottom: 60px;
+}
+
+
+
+/* CHNAGED TO LINK </A> TAG */
+
+/* .btn-home {
+    display: inline-block;
+    padding: 1em 1.5em;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: 0;
+    cursor: pointer;
+    background: #FF8C38;
+    color: #FFFFFF;
+} */
+
+.home-hero a {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FF8C38;
+    border: none;
+    width: 100%;
+    margin-top: 27px;
+    padding-block: .75rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .1s ease-in-out;
+}
+
+.home-hero a:hover {
+    transform: translate(1px, 1px);
+}

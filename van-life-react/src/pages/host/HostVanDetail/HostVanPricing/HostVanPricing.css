@@ -1,0 +1,13 @@
+.host-van-pricing-info {
+    padding: 1em;
+}
+
+.host-van-pricing-info p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.host-van-pricing-info span {
+    font-size: 16px;
+    font-weight: 400;
+}

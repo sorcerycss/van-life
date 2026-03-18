@@ -1,0 +1,54 @@
+/* Van Detail */
+
+.back-btn {
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: underline;
+    align-self: flex-start;
+    border: 0;
+    background: 0;
+    cursor: pointer;
+}
+
+.van-detail {
+    display: flex;
+    flex-direction: column;
+    color: #161616;
+    padding: 20px;
+}
+
+.van-detail img {
+    height: 500px;
+    border-radius: 5px;
+    margin-block: 47px;
+}
+
+.van-detail h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.van-detail i {
+    align-self: flex-start;
+}
+
+.van-detail .van-price span {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.van-price {
+    margin-bottom: 15px;
+}
+
+.van-detail .link-btn {
+    font-size: 1.125rem;
+    border: 0;
+    border-radius: 5px;
+    background: #FF8C38;
+    color: #FFFFFF;
+    padding: 0.75em 1.5em;
+    margin: 20px 0 40px;
+    cursor: pointer;
+}
